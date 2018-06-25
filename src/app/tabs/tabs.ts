@@ -2,19 +2,21 @@ import {Component, ViewChild} from '@angular/core';
 import {Tab, Tabs} from 'ionic-angular';
 import {AutoUnsubscribe} from '@core/auto-unsubscribe';
 
-import {HomeTab} from '@app/home-tab';
+import {HomePage, HomeTab} from '@app/home-tab';
 import {DeviceService} from '@core/device';
 import {SplitViewService} from '@core/split-view';
 import {TabsService} from './tabs.service';
-import {NewsTab} from "@app/news-tab";
+import {NewsTab, QuiPage} from "@app/news-tab";
 
 @Component({
     templateUrl: 'tabs.html'
 })
 export class TabsPage extends AutoUnsubscribe {
     @ViewChild('appTabs') appTabs: Tabs;
-    tab1Root = HomeTab;
-    tab2Root = NewsTab;
+    // tab1Root = HomeTab;
+    tab1Root = HomePage;
+    // tab2Root = NewsTab;
+    tab2Root = QuiPage;
     // tab3Root = InfoCornerTab;
     // tab4Root = NotificationsTab;
     splitViewIsActive: boolean = false;
@@ -36,7 +38,7 @@ export class TabsPage extends AutoUnsubscribe {
     private initSplitViewSubscriptions(){
         const Tabs = this;
         // If device is tablet activate split view and unlock orientation
-        if(this.deviceService.isTablet()){
+        /*if(this.deviceService.isTablet()){
             this.splitViewIsActive = true;
             this.splitViewService.isOn$
                 .takeUntil(this.destroy$)
@@ -49,7 +51,9 @@ export class TabsPage extends AutoUnsubscribe {
         else {
             this.splitViewIsActive = false;
             this.splitViewService.deactivateSplitView();
-        }
+        }*/
+        this.splitViewIsActive = false;
+        this.splitViewService.deactivateSplitView();
     }
 
 

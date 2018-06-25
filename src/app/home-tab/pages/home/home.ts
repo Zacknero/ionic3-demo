@@ -48,11 +48,11 @@ export class HomePage {
                     label: 'UPSTREAM',
                     data: [120, 190, 300, 500, 200, 300, 1200, 1100],
                     backgroundColor: [
-                        'rgb(0, 0, 153)'
+                        'rgba(0, 0, 153, 1)'
 
                     ],
                     borderColor: [
-                        'rgb(0, 0, 153)'
+                        'rgba(0, 0, 153, 1)'
                     ],
                     fill: false,
                     borderWidth: 1,
@@ -62,10 +62,10 @@ export class HomePage {
                         label: 'ATONO',
                         data: [250, 190, 50, 150, 900, 130, 580, 300],
                         backgroundColor: [
-                            'rgb(255, 255, 0)'
+                            'rgba(255, 255, 0, 1)'
                         ],
                         borderColor: [
-                            'rgb(255, 255, 0)',
+                            'rgba(255, 255, 0, 1)',
                         ],
                         fill: false,
                         borderWidth: 1
@@ -74,10 +74,10 @@ export class HomePage {
                         label: 'MOBBOX ',
                         data: [400, 60, 300, 700, 900, 1000, 1100, 800],
                         backgroundColor: [
-                            'rgb(153, 76, 0)'
+                            'rgba(153, 76, 0, 1)'
                         ],
                         borderColor: [
-                            'rgb(153, 76, 0)'
+                            'rgba(153, 76, 0, 1)'
                         ],
                         fill: false,
                         borderWidth: 1
@@ -86,10 +86,10 @@ export class HomePage {
                         label: 'ACOTEL ',
                         data: [1200, 60, 850, 700, 900, 1000, 1100, 800],
                         backgroundColor: [
-                            'rgb(0, 153, 0)'
+                            'rgba(0, 153, 0, 1)'
                         ],
                         borderColor: [
-                            'rgb(0, 153, 0)'
+                            'rgba(0, 153, 0, 1)'
                         ],
                         fill: false,
                         borderWidth: 1
@@ -98,10 +98,10 @@ export class HomePage {
                         label: 'ENGINEERING ',
                         data: [200, 600, 300, 1000, 600, 1000, 100, 800],
                         backgroundColor: [
-                            'rgb(204, 0, 102)'
+                            'rgba(204, 0, 102, 1)'
                         ],
                         borderColor: [
-                            'rgb(204, 0, 102)'
+                            'rgba(204, 0, 102, 1)'
                         ],
                         fill: false,
                         borderWidth: 1
@@ -137,7 +137,7 @@ export class HomePage {
                     xAxes: [{
                         gridLines: {
                             display: false,
-                            color: 'rgb(202, 15, 108)',
+                            color: 'rgba(202, 15, 108, 1)',
                         }
                     }]
                 }
