@@ -1,0 +1,11 @@
+{
+    "baseUrl" : "http://localhost:9001",
+    "langs" : [
+        {
+            "code": "en",
+            "label": "English",
+            "url": "/i18n/langs/en.json",
+            "isDefault": true
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+
+<ion-tabs
+    #appTabs
+    no-border
+    color="secondary"
+    class="app-tabs"
+    [ngClass]="{'split-view' : splitViewIsActive}"
+    (ionChange)="onTabChanges($event)">
+
+    <ion-tab
+        [root]="tab1Root"
+        [tabTitle]="'CHART' | translate"
+        tabIcon="home"></ion-tab>
+    <ion-tab
+        [root]="tab2Root"
+        [tabTitle]="'ECHART' | translate"
+        tabIcon="star"></ion-tab>
+
+</ion-tabs>

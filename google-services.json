@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "474572383177",
+    "firebase_url": "https://councilapp-41013.firebaseio.com",
+    "project_id": "councilapp-41013",
+    "storage_bucket": "councilapp-41013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474572383177:android:0010d760f46edee1",
+        "android_client_info": {
+          "package_name": "it.engds.councilapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474572383177-duj1vq9rqmbi6vod4d53r40gbid7eu0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2isbEXrfq5npTGLI0PV11MM7M5ZzE84Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

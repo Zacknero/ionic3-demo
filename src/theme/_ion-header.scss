@@ -1,0 +1,14 @@
+
+ion-header {
+    .left-padded {
+        padding-left: 34px;
+    }
+    .right-padded {
+        padding-right: 34px;
+    }
+}
+
+// FIX for iOS center alignament
+ion-navbar button.back-button.show-back-button + .toolbar-content {
+    margin-right: 55px;
+}

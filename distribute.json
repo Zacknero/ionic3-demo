@@ -1,0 +1,76 @@
+{
+    "app" : {
+        "name" : "Ionic3Template",
+        "label" : "Ionic3 Template"
+    },
+
+    "sources" : {
+        "htmlVersionPath" : "./src/app/login/pages/login/login.html"
+    },
+
+    "cordova" : {
+        "rootPath" : ".",
+        "buildIosCommand" : "npm run build:ios:coll",
+        "buildAndroidCommand" : "npm run build:android:coll"
+    },
+
+    "buildsDir": "builds/",
+
+    "ios" : {
+        "bundleId" : "it.engds.ionic3template",
+        "exportOptionsPlist" : {
+            "compileBitcode" : false,
+            "teamID" : "5P8U8PL6ZA",
+            "method" : "enterprise",
+            "provisioningProfiles" : {
+                "it.engds.ionic3template" : "Ionic 3 Template"
+            },
+            "signingCertificate" : "iPhone Distribution",
+            "signingStyle" : "manual",
+            "stripSwiftSymbols" : true,
+            "thinning" : "<none>"
+        }
+    },
+
+    "android" : {
+        "bundleId" : "it.engds.ionic3template",
+        "keystore" : {
+            "path" : "~/Development/Android Keystores/android_engineering.keystore",
+            "alias" : "engineering",
+            "password" : "engineering"
+        }
+    },
+
+    "remote" : {
+
+        "builds" : {
+            "host": "172.20.0.243",
+            "user": "userdevbuild",
+            "password": "Us3rD3v$Bu1ld014",
+            "iosDestinationPath": "/usr/local/apache2/htdocs/build/ionictemplate/iOS",
+            "androidDestinationPath": "/usr/local/apache2/htdocs/build/ionictemplate/Android"
+        },
+
+        "repo" : {
+            "host": "172.20.1.120",
+            "user": "ionictemplate",
+            "password": "ionictemplate",
+            "jsonPath": "/var/www/html/council/wd",
+            "iosUrlPath": "https://cert1.engbms.it/build/ionictemplate/iOS",
+            "androidUrlPath": "https://cert1.engbms.it/build/ionictemplate/Android/",
+            "homepageUrl": "http://mobileapp-coll.engds.it/ionictemplate/wd"
+        }
+    },
+
+    "email" : {
+        "host": "mail.ds.eng.it",
+        "port": 25,
+        "user": "internal@ds.eng.it",
+        "password": "1engXX2010",
+        "from": "internal@ds.eng.it",
+        "to": [
+
+        ]
+    }
+
+}

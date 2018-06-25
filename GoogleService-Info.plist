@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>474572383177-0230lok2jlv5bk4odi3gemouk574e5sh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.474572383177-0230lok2jlv5bk4odi3gemouk574e5sh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkygaObD8EYLPN39QMUc0S1VXAdBCeYgA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>474572383177</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>it.engds.councilapp</string>
+	<key>PROJECT_ID</key>
+	<string>councilapp-41013</string>
+	<key>STORAGE_BUCKET</key>
+	<string>councilapp-41013.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:474572383177:ios:0010d760f46edee1</string>
+	<key>DATABASE_URL</key>
+	<string>https://councilapp-41013.firebaseio.com</string>
+</dict>
+</plist>

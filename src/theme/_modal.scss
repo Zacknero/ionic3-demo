@@ -1,0 +1,21 @@
+ion-modal.fullscreen {
+    .modal-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.alert-ios .alert-button {
+    color: map-get($colors, ios-primary) !important;
+}
+
+ion-toast {
+    .toast-button {
+        color: map-get($colors, secondary);
+    }
+}

@@ -1,0 +1,15 @@
+
+app-starter {
+    ion-content {
+        background: #2b5783;
+        background: -webkit-radial-gradient(center, ellipse cover, #2b5783 0%,#293b59 100%);
+        background: radial-gradient(ellipse at center, #2b5783 0%,#293b59 100%);
+
+        p {
+            color: map-get($colors, light);
+            text-align: center;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+    }
+}
