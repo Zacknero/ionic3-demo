@@ -12,16 +12,35 @@ import {QuoPage} from "@app/news-tab/pages/quo/quo";
 export class QuiPage {
 
     @ViewChild('eChartMultiLine') eChartMultiLine: ElementRef;
+    myChartQui: any;
 
     constructor(public navCtrl: NavController, private deviceService: DeviceService) {
     }
 
     ionViewDidLoad() {
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        console.log('QUI_ionViewDidLoad')
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        this.deviceService.isCordova() ? this.deviceService.unlockOrientation() : null;
+        this.deviceService.onOrientationChange(
+            () => {
+                setTimeout(() => {
+                    this.myChartQui.resize();
+                }, 100);
+            }
+        )
+    }
+
+    ionViewWillEnter(){
+        console.log('QUI_ionViewWillEnter')
     }
 
     ionViewDidEnter() {
-        this.createMultiline();
+        this.myChartQui ? this.myChartQui.resize() : this.createMultiline();
+        console.log('QUI_ionViewDidEnter')
+    }
+
+    ionViewDidLeave() {
+        console.log('QUI_ionViewDidLeave')
     }
 
     goToQuo() {
@@ -30,15 +49,17 @@ export class QuiPage {
 
     createMultiline() {
 
-        let myChart = echarts.init(this.eChartMultiLine.nativeElement);
+        this.myChartQui = echarts.init(this.eChartMultiLine.nativeElement);
 
         let option = {
             title: {
                 text: 'ECharts'
             },
-            tooltip: {},
+            tooltip: {
+                trigger: 'axis',
+            },
             legend: {
-                data:['Topolino','Pluto','Pippo']
+                data: ['Topolino', 'Pluto', 'Pippo']
             },
             xAxis: {
                 type: 'category',
@@ -50,21 +71,31 @@ export class QuiPage {
             series: [{
                 name: 'Topolino',
                 type: 'line',
-                data: [20.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                data: [120.0, 90.9, 17.0, 23.2, 200.6, 86.7, 135.6, 162.2, 32.6, 20.0, 136.4, 43.3]
             },
                 {
                     name: 'Pluto',
                     type: 'line',
-                    data: [50.6, 5.9, 19.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                    data: [150.6, 60.9, 109.0, 126.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 96.0, 92.3]
                 },
                 {
                     name: 'Pippo',
                     type: 'line',
-                    data: [60.0, 2.2, 30.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-                }]
+                    data: [60.0, 200.2, 150.3, 49.5, 60.3, 100.2, 20.3, 23.4, 23.0, 16.5, 120.0, 36.2]
+                }],
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    yAxisIndex: [0]
+                }
+            ]
         };
 
-        myChart.setOption(option);
+        this.myChartQui.setOption(option);
     }
 
 }

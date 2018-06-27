@@ -12,6 +12,7 @@ import {Page1Page} from "@app/home-tab";
 export class HomePage {
 
     @ViewChild('chartCanvasLine') chartCanvasLine: ElementRef;
+    chartObject: any;
 
     constructor( private deviceService: DeviceService, private navCtrl: NavController){
     }
@@ -23,7 +24,8 @@ export class HomePage {
 
     ionViewDidEnter() {
         this.showChartLines();
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        this.deviceService.isCordova() ? this.deviceService.unlockOrientation() : null;
         console.log('Did Enter Home');
     }
 
@@ -40,7 +42,7 @@ export class HomePage {
     }
 
     showChartLines() {
-        new Chart(this.chartCanvasLine.nativeElement, {
+        this.chartObject = new Chart(this.chartCanvasLine.nativeElement, {
             type: 'line',
             data: {
                 labels: ["7/2018", "8/2018", "9/2018", "10/2018", "11/2018", "12/2018", "13/2018", "14/2018"],
@@ -113,10 +115,10 @@ export class HomePage {
                   console.log('legd item', item);
                 },*/
                 legend: {
-                    onClick: function (evt: any, item: any) {
+                    /*onClick: function (evt: any, item: any) {
                         // console.log ('legend onClick', evt);
                         console.log('legd item', item);
-                    },
+                    },*/
                     labels: {
                         fontSize: 12,
                         boxWidth: 12
@@ -140,6 +142,22 @@ export class HomePage {
                             color: 'rgba(202, 15, 108, 1)',
                         }
                     }]
+                },
+                pan: {
+                    enabled: true,
+                    mode: 'x',
+                    rangeMax: {
+                        x: 0,
+                        y: 10
+                    }
+                },
+                zoom: {
+                    enabled: true,
+                    mode: 'x',
+                    rangeMax: {
+                        x: 0,
+                        y: 10
+                    }
                 }
             }
         });

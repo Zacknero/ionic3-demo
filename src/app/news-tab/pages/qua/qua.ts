@@ -10,29 +10,35 @@ import {DeviceService} from "@core/device/device.service";
 export class QuaPage {
 
     @ViewChild('echartMixed') echartMixed: ElementRef;
+    myChartQua: any;
 
     constructor(private deviceService: DeviceService) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad QuaPage');
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        this.deviceService.onOrientationChange(
+            () => {
+                setTimeout(() => {
+                    this.myChartQua.resize();
+                }, 100);
+            }
+        )
     }
 
     ionViewDidEnter() {
-        this.createMixedChart();
+        this.myChartQua ? this.myChartQua.resize() : this.createMixedChart();
     }
 
     ionViewWillLeave(){
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
     }
 
     createMixedChart() {
-        // app.title = '多 Y 轴示例';
+        this.myChartQua = echarts.init(this.echartMixed.nativeElement);
 
-        let myChart = echarts.init(this.echartMixed.nativeElement);
-
-        var colors = ['#5793f3', '#d14a61', '#675bba'];
+        let colors = ['#5793f3', '#d14a61', '#675bba'];
 
         let option = {
             color: colors,
@@ -124,10 +130,26 @@ export class QuaPage {
                     yAxisIndex: 2,
                     data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
                 }
+            ],
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    id: 'TestLine',
+                    yAxisIndex: [0]
+                },
+                {
+                    type: 'inside',
+                    id: 'TestRed',
+                    yAxisIndex: [0]
+                }
             ]
         };
 
-        myChart.setOption(option);
+        this.myChartQua.setOption(option);
     }
 
 }

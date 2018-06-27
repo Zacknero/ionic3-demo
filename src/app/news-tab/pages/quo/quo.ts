@@ -13,23 +13,40 @@ import {QuaPage} from "@app/news-tab/pages/qua/qua";
 export class QuoPage {
 
     @ViewChild('eChartSpeedometer') eChartSpeedometer: ElementRef;
-
-    // @ViewChild('eChartSpeedometer1') eChartSpeedometer1: ElementRef;
-
+    myChartQuo: any;
 
     constructor(public navCtrl: NavController, private deviceService: DeviceService) {
     }
 
     ionViewDidLoad() {
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
+        console.log('QUO_ionViewDidLoad')
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
+        this.deviceService.onOrientationChange(
+            () => {
+                setTimeout(() => {
+                    this.myChartQuo.resize();
+                }, 100);
+            }
+        )
     }
 
     ionViewDidEnter() {
-        this.createSpeedometer()
+        console.log('QUO_ionViewDidEnter')
+        this.myChartQuo ? this.myChartQuo.resize() : this.createSpeedometer();
+        // this.myChartQuo.resize();
+    }
+
+    ionViewWillEnter(){
+        console.log('QUO_ionViewWillEnter')
+    }
+
+    ionViewDidLeave() {
+        console.log('QUO_ionViewDidLeave')
     }
 
     ionViewWillLeave() {
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        console.log('QUO_ionViewWillLeave')
     }
 
     goToQua() {
@@ -37,8 +54,8 @@ export class QuoPage {
     }
 
     createSpeedometer() {
-        let myChart = echarts.init(this.eChartSpeedometer.nativeElement);
-        // let myChart1 = echarts.init(this.eChartSpeedometer1.nativeElement);
+        this.myChartQuo = echarts.init(this.eChartSpeedometer.nativeElement);
+        // let myChartQuo1 = echarts.init(this.eChartSpeedometer1.nativeElement);
 
         let option = {
             tooltip: {
@@ -80,14 +97,13 @@ export class QuoPage {
             ]
         };
 
-        myChart.setOption(option);
-        // myChart1.setOption(option);
+        this.myChartQuo.setOption(option);
+        // myChartQuo1.setOption(option);
 
-        setInterval(function () {
+        /*setInterval(function () {
             option.series[0].data[0].value = +(Math.random() * 100).toFixed(2) - 0;
-            myChart.setOption(option, true);
-            // myChart1.setOption(option, true);
-        }, 2000);
+            this.myChartQuo.setOption(option, true);
+        }, 2000);*/
 
     }
 

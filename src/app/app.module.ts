@@ -11,6 +11,8 @@ import { SharedModule } from '@shared/shared.module';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import {NewsModule} from "@app/news-tab";
 
+import 'chartjs-plugin-zoom';
+
 @NgModule({
     declarations: [
         App,

@@ -1,7 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
-
-import {DeviceService} from "@core/device/device.service";
 import {Chart} from 'chart.js';
 import {Page2Page} from "@app/home-tab/pages/page2/page2";
 
@@ -13,7 +11,7 @@ export class Page1Page {
 
     @ViewChild('chartCanvasSpeedometer') chartCanvasSpeedometer: ElementRef;
 
-    constructor(public navCtrl: NavController, private deviceService: DeviceService) {
+    constructor(public navCtrl: NavController) {
     }
 
     ionViewDidLoad(){
@@ -21,11 +19,11 @@ export class Page1Page {
     }
 
     ionViewDidEnter() {
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
     }
 
     ionViewWillLeave(){
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
     }
 
     goToPage2() {

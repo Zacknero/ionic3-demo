@@ -1,6 +1,4 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-
-import {DeviceService} from "@core/device/device.service";
 import {Chart} from 'chart.js';
 
 @Component({
@@ -24,7 +22,7 @@ export class Page2Page {
     @ViewChild('chartCanvasMultiChart') chartCanvasMultiChart: ElementRef;
 
 
-    constructor(private deviceService: DeviceService) {
+    constructor() {
     }
 
     ionViewDidLoad(){
@@ -33,11 +31,11 @@ export class Page2Page {
 
     ionViewDidEnter() {
         console.log('ionViewDidLoad ProvaPage');
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('landscape') : null;
     }
 
     ionViewWillLeave(){
-        this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
+        // this.deviceService.isCordova() ? this.deviceService.lockOrientation('portrait') : null;
     }
 
     drawCombinedChart() {
@@ -124,6 +122,22 @@ export class Page2Page {
                 legend: {
                     labels: {
                         fontSize: 15
+                    }
+                },
+                pan: {
+                    enabled: true,
+                    mode: 'x',
+                    rangeMax: {
+                        x: 0,
+                        y: 10
+                    }
+                },
+                zoom: {
+                    enabled: true,
+                    mode: 'x',
+                    rangeMax: {
+                        x: 0,
+                        y: 10
                     }
                 }
             }
